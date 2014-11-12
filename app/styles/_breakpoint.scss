@@ -1,0 +1,59 @@
+ /*
+ * Breakpoints Mixin
+ *
+ * https://medium.com/@timknight/creating-a-dead-simple-sass-mixin-to-handle-responsive-breakpoints-889927b37740
+ *
+ */
+
+@mixin mq($min: 0, $max: 0) {
+  $type: type-of($min);
+  
+  @if $type == string {
+    @if $min == xs { 
+      @media (max-width: $xs) { @content; }       // Mobile Devices
+    }
+    
+    @else if $min == sm {
+      @media (min-width: $sm) { @content; }       // Tablet Devices
+    }
+    
+    @else if $min == md {
+      @media (min-width: $md) { @content; }       // Desktops
+    }
+    
+    @else if $min == lg {
+      @media (min-width: $lg) { @content; }      // Widescreen Desktops
+    }
+  
+    // Otherwise pass a warning to the compiler as to the appropriate options
+    @else {
+      @warn "The breakpoint mixin supports the following attributes: xs, sm, md, lg";
+    }
+  }
+  @else if $type == number {
+    // Allow for custom parameters for min and max size
+    $query: "all" !default;
+    @if      $min != 0 and $max != 0 { $query: "(min-width: #{$min}) and (max-width: #{$max})"; } // set both min and max
+    @else if $min != 0 and $max == 0 { $query: "(min-width: #{$min})"; } // set just min
+    @else if $min == 0 and $max != 0 { $query: "(max-width: #{$max})"; } // set just max
+    @media #{$query} { @content; }
+  }
+}
+
+
+// example usage
+/* 
+  div {
+    @include mq(md) {
+      float: right;
+      width: 350px;
+    }
+    @include mq(480px) {
+      display: none;
+    }
+    @include mq($min: 640px, $max: 767px) {
+      text-align: center;
+      font-style: italic;
+    }
+  } 
+*/ 

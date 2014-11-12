@@ -1,0 +1,83 @@
+h1, h2, h3, h4, h5, p {
+  margin: 0;
+}
+
+.small {
+  font-size: $fontSmall;
+  line-height: 2.0000em; /* 26px */
+  padding-top: 2.0000em;
+  padding-bottom: 0;
+}
+
+.base {
+  font-size: $fontBase;
+  line-height: 1.6250em; /* 26px */
+  padding-top: 1.6250em;
+  padding-bottom: 0;
+}
+
+.medium {
+  font-size: $fontBase;  
+  line-height: 1.6250em; /* 26px */
+  padding-top: 1.6250em;
+  padding-bottom: 0;
+
+  @include mq(sm) {
+    font-size: $fontMedium;
+    font-weight: 300;
+    line-height: 1.3000em; /* 26px */
+    padding-top: 1.3000em;
+  } 
+}
+
+.large {
+  font-family: $fontHighlight;
+  font-size: $fontMedium;
+  font-weight: 300;
+  line-height: 1.3000em; /* 26px */
+  padding-top: 1.3000em;
+  padding-bottom: 0;
+
+  @include mq(sm) {
+    font-size: $fontLarge;
+    line-height: 1.0000em; /* 26px */
+    padding-top: 1.0000em;
+  }  
+}
+
+.xlarge {
+  font-family: $fontHighlight;
+  font-size: $fontLarge;
+  font-weight: 300;
+  line-height: 1.0000em; /* 26px */
+  padding-top: 1.0000em;
+  padding-bottom: 0;
+  
+  @include mq(sm) {
+    font-size: $fontXLarge;
+    line-height: 1.2381em; /* 52px */
+    padding-top: 0.6190em;
+  }
+}
+
+.xxlarge {
+  font-family: $fontHighlight;
+  font-size: $fontXXLarge;
+  font-weight: 300;
+  line-height: 1.1471em; /* 78px */
+  padding-top: 0.3824em;
+  padding-bottom: 0;
+}
+
+.huge {
+  font-family: $fontHighlight;
+  font-size: $fontHuge;
+  font-weight: 300;
+  line-height: 1.19em; /* 130px */
+  padding-top: 0.2364em;
+  padding-bottom: 0;
+}
+
+li > p {
+  padding-top: 0;
+}

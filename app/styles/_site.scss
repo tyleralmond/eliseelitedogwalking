@@ -1,0 +1,304 @@
+// global
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+.link {
+	color: $color-darkmain;
+	transition: 0.2s ease-out;
+
+	&:hover {
+		color: $color-darkgrey;		
+	}
+}
+
+
+
+// helpers
+
+.container {
+	@include mq(xs) {
+		padding-left: 5%;
+		padding-right: 5%;
+	}		
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.text-center {
+	text-align: center;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.lineheight-bottom {
+	margin-bottom: $line-height;
+}
+
+.inline-link {
+	margin: -10px;
+	padding: 10px;
+	position: relative;
+}
+
+
+// header
+
+.header {
+	position: relative;
+	background: $color-darkmain;
+
+	@include mq(sm) {
+		background-color: $color-main;
+		background-image: url(../images/hero-bleach.jpg);
+		background-size: contain;
+		background-attachment: fixed;
+	}
+}
+
+.header::after {
+	@include mq(sm) {
+		content: "";
+		display: block;
+		padding-top: 46.85%;
+	}
+}
+
+.logo {
+	width: 120px;
+
+	@include mq(xs) {
+		margin-top: $line-height;
+	}
+
+	@include mq(sm) {		
+		position: absolute;
+		top: $line-height;
+		left: $line-height;
+	}
+
+	@include mq(md) {
+		width: 150px;
+	}
+}
+
+.tagline {
+	font-family: $fontHighlight;
+
+	@include mq(xs) {
+		margin-top: $line-height;
+	}
+
+	@include mq(sm) {
+		position: absolute;
+		top: 35%;
+		left: 50%;
+		margin-left: -243px;
+	}	
+
+	h1 {		
+		padding-top: 0;
+		font-style: italic;
+		color: $color-darkgrey;
+
+		span {
+			font-style: normal;
+			font-weight: normal;
+		}
+	}
+
+	h2 {
+		padding-top: 0;
+		font-weight: normal;
+		color: $color-medgrey;
+	}
+}
+
+	.cta {
+		display: inline-block;
+		margin-top: $line-height;
+		padding: 0.5em 1em;
+		border-radius: 3px;
+		border: 2px solid white;
+		color: white;
+		transition: all 200ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+		-webkit-backface-visibility: hidden;
+		
+		@include mq(xs) {
+			margin-top: $line-height;
+			margin-bottom: $line-height * 2;
+		} 
+	
+		&:hover {			
+			transform: scale(1.1);
+			background: rgba(0,0,0, 0.5);
+			border: 2px solid $color-secondary;
+		}
+	}
+
+
+// main
+
+section {
+	padding-top: $line-height;
+	margin-bottom: $line-height;
+
+	h2 {
+		margin-bottom: $line-height;
+	}
+}
+
+.line-length {
+	max-width: 480px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+// about
+
+.about-divider {
+	&:after {
+		content: "";
+		display: block;
+		width: 50%;
+		height: 2px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: $line-height;
+		background: $color-secondary;
+	}	
+}
+
+
+// services
+
+.services-container {
+	background: $color-backgroundgrey;
+	border-top: 1px solid $color-lightgrey;
+	border-bottom: 1px solid $color-lightgrey;
+}
+
+.services {
+	margin: 0;
+	padding: 0;
+	padding-top: $line-height;
+	background: $color-backgroundgrey;
+	border-top: 1px solid $color-main;
+	border-bottom: 1px solid $color-main;
+
+	li {
+		margin-bottom: $line-height;
+		@include mq(sm) {
+			float: left;
+			width: 33.33%;
+		}
+	}
+
+	img {
+		background: white;
+		padding: 15px;		
+		// border: 1px solid $color-main;
+	}
+
+	h3::before {
+		content: "";
+		display: block;
+		height: 5px;
+		width: 20%;
+		margin-left: auto;
+		margin-right: auto;
+		margin-bottom: $line-height / 2;
+		background: $color-main;
+	}
+}
+
+//testimonials
+
+.quote {
+	position: relative;
+	font-style: italic;
+
+	&::before {
+		content: "\201C";
+		position: absolute;
+		z-index: -1;
+		top: 100px;
+		left: -50px;
+		font-family: $font-sans;
+		font-size: 300px;
+		font-style: italic;
+		color: $color-main;
+
+		@include mq(sm) {
+			left: -80px;
+		}
+	}
+
+	img {
+		float: right;
+		margin-left: 2%;
+	}
+}
+
+// contact
+
+.contact-link {
+	display: block;
+	line-height: 1;
+	padding-top: $line-height / 4;
+	padding-bottom: $line-height / 4;
+}
+
+.contact-divider {
+	&::before {
+		content: "";
+		display: block;
+		width: 150px;
+		height: 2px;
+		margin-left: auto;
+		margin-right: auto;
+		margin-top: $line-height;
+		margin-bottom: $line-height;
+		background: $color-secondary;
+	}	
+}
+
+
+// footer
+
+.footer {
+	margin-top: $line-height * 4;
+	padding-top: $line-height;
+	padding-bottom: $line-height;
+	// background: $color-medgrey url(../images/footer-dog.jpg);
+	background: $color-darkgrey;
+	background-repeat: no-repeat;
+	background-position: 85% 100%;
+	color: white;
+
+	p {
+		padding-top: 0;
+	}
+}
+
+
+
+
+
+
+
+
