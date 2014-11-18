@@ -302,9 +302,8 @@ section {
 
 .footer {
 	margin-top: $line-height * 4;
-	padding-top: $line-height;
-	padding-bottom: $line-height;
-	// background: $color-medgrey url(../images/footer-dog.jpg);
+	padding-top: $line-height * 2;
+	padding-bottom: $line-height * 2;
 	background: $color-darkgrey;
 	background-repeat: no-repeat;
 	background-position: 85% 100%;
