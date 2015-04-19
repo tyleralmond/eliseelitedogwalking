@@ -213,18 +213,22 @@ section {
 }
 
 .services {
-	margin: 0;
-	padding: 0;
 	padding-top: $line-height;
 	background: $color-backgroundgrey;
 	// border-top: 1px solid $color-main;
 	// border-bottom: 1px solid $color-main;
 
+	ul {
+		max-width: 750px;
+		margin: 0 auto;
+		padding: 0;
+	}
+
 	li {
 		margin-bottom: $line-height;
 		@include mq(sm) {
 			float: left;
-			width: 33.33%;
+			width: 50%;
 		}
 	}
 
