@@ -112,7 +112,7 @@ li {
 	h1 {		
 		padding-top: 0;
 		font-style: italic;
-		color: $color-darkgrey;
+		color: #333;
 
 		span {
 			font-style: normal;
@@ -121,11 +121,15 @@ li {
 	}
 
 	h2 {
-		padding-top: 0;
+		padding-top: 5px;
 		font-weight: normal;
-		color: $color-medgrey;
+		color: #555;
 	}
 }
+
+	.no-cta {
+		padding-bottom: $line-height * 2;
+	}
 
 	.cta {
 		display: inline-block;
@@ -251,6 +255,10 @@ section {
 }
 
 //testimonials
+
+.testimonial {
+	margin-bottom: $line-height * 2;
+}
 
 .quote {
 	position: relative;
